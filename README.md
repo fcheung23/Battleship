@@ -11,6 +11,8 @@
 ## Features
 1. Aesthetically pleasing console interface
 2. Robust input validation and error messaging (invalid ship placements, duplicate target attempts, etc.)
-3. The four classic "boards" represented by dynamically allocated 2D arrays
+3. The four classic "boards" and all other "screens" represented by dynamically allocated 2D arrays
 4. Individual ship tracking; individual ship health ♥ and positioning stored through use of structs
+
+## Gameplay Screenshots
  
