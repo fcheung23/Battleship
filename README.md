@@ -14,6 +14,6 @@
 3. The four classic "boards" and all other "screens" represented by dynamically allocated 2D arrays
 4. Individual ship tracking; individual ship health ♥ and positioning stored through use of structs
 
-## Gameplay Screenshots
-![Tutorial Screen](Battleship/screenshots/Tutorial - BattleShip.png)
+ ## Gameplay Screenshots
+ ![Tutorial Screen](screenshots/Tutorial - BattleShip.png)
  
