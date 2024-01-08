@@ -17,3 +17,5 @@
  ## Gameplay Screenshots
  Tutorial
 ![Tutorial](https://github.com/fcheung23/Battleship/blob/main/screenshots/Tutorial%20-%20BattleShip.png)
+Ship Placement
+![Ship Placement](https://github.com/fcheung23/Battleship/blob/main/screenshots/Ship%20Placement%20-%20BattleShip.png)
