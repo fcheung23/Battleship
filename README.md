@@ -15,4 +15,4 @@
 4. Individual ship tracking; individual ship health ♥ and positioning stored through use of structs
 
  ## Gameplay Screenshots
- ![Tutorial](screenshots/Tutorial - BattleShip.png)
+![Tutorial](https://github.com/fcheung23/Battleship/blob/main/screenshots/Tutorial%20-%20BattleShip.png)
