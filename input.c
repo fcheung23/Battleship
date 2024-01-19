@@ -221,7 +221,6 @@ bool is_valid_target(board attackBoard, int targetRow, int targetCol) {
     else return false;
 }
 
-// modifies attackBoard with X, pShips with X, and decreases the corresponding ships health based on the target if hit and returns true for a hit 
 /**
  * Checks if coordinates of target entered are a hit (land on one of the enemy ships)
  * @param attackBoard: pointer to attackBoard representing board of ships the player attacks
