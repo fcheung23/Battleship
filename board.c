@@ -7,7 +7,11 @@
 #include "ships.h"
 #include "stages.h"
 
-// creates board of size 10 x 10
+/**
+ * Creates board of size 10 by 10
+ * @param none: none
+ * @return struct of type board representing the board
+ */
 board create_board() {
     board boardStruct;
     boardStruct.squares = (char**)malloc(10 * sizeof(char*));
@@ -22,7 +26,11 @@ board create_board() {
     return boardStruct;
 }   
 
-// prints the board
+/**
+ * Prints the board requested
+ * @param currentBoard: board struct representing the board to be printed
+ * @return nothing
+ */
 void print_board(board currentBoard) {
     int y_axis_label = 9;
     for (int r = 0; r < 10; r++) {
@@ -39,7 +47,11 @@ void print_board(board currentBoard) {
     }
 }
 
-// frees current board's memory
+/**
+ * Frees memory associated with a board
+ * @param currentBoard: pointer to board struct to deallocate memory for
+ * @return nothing
+ */
 void delete_board(board* currentBoard) {
     for (int r = 0; r < 10; r++) {
             free(currentBoard->squares[r]);
@@ -47,9 +59,14 @@ void delete_board(board* currentBoard) {
     free(currentBoard->squares);
 }
 
-// draws the ship on the board needed given the ship
+/**
+ * "Draws" ship onto board by modifying 2D array
+ * @param currentBoard: pointer to board struct to "draw" ship onto
+ * @param currentShip: ship struct containing coordinates for drawing ship
+ * @return nothing
+ * @modifies currentBoard
+ */
 void draw_ship(board* currentBoard, ship currentShip) {
-    // if horizontal ship yeah draw that
     if (is_horizontal(currentShip.startRow, currentShip.endRow)) {
         currentBoard->squares[9 - currentShip.startRow][currentShip.startCol] = '<';
         for (int c = currentShip.startCol + 1; c < currentShip.endCol; c++) {
@@ -57,7 +74,6 @@ void draw_ship(board* currentBoard, ship currentShip) {
         }
         currentBoard->squares[9 - currentShip.startRow][currentShip.endCol] = '>';
     }
-    // if vertical ship draw that hell yeah
     if (is_vertical(currentShip.startCol, currentShip.endCol)) {
         currentBoard->squares[9 - currentShip.startRow][currentShip.startCol] = 'v';
         for (int r = 9 - currentShip.startRow - 1; r > 9 - currentShip.endRow; r--) {
