@@ -596,7 +596,8 @@ bool check_win(ship p1_carrier, ship p1_battleship, ship p1_destroyer, ship p1_s
 }
 
 /**
- * Initializes all variables necessary for playing the game and progression, call stages in order, do turns until win, deallocate memory after
+ * Initializes all variables necessary for playing the game and progression, calls stages in order, does turns until 
+ a player wins, deallocates memory after
  * @param none
  * @return nothing
  */
