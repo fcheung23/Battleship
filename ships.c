@@ -7,6 +7,15 @@
 #include "ships.h"
 #include "stages.h"
 
+/**
+ * Creates struct of type ship representing a ship
+ * @param health: int representing health/length of ship
+ * @param startRow: int representing row of the start hull
+ * @param startCol: int representing column of the start hull
+ * @param endRow: int representing row of the end hull
+ * @param endCol: int representing column of the end hull
+ * @return struct of type ship
+ */
 ship create_ship(int health, int startRow, int startCol, int endRow, int endCol) {
     ship shipStruct;
     if (endRow < startRow) {
