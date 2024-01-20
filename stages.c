@@ -7,7 +7,11 @@
 #include "ships.h"
 #include "stages.h"
 
-// prints welcome screen
+/**
+ * Prints the welcome screen with graphic and resize instructions
+ * @param none
+ * @return nothing
+ */
 void print_welcome_screen() {
     printf("╔═════<[ - ][ | ][ | ]>   BATTLESHIP   <[ - ][ - ][ | ]>═════╗\n\n");
     board welcomeBoard = create_board();
@@ -34,7 +38,11 @@ void print_welcome_screen() {
     delete_board(&welcomeBoard);    
 }
 
-// prints tutorial screen
+/**
+ * Prints the tutorial screen with example board and instructions
+ * @param none
+ * @return nothing
+ */
 void print_tutorial_screen() {
     printf("╔═════<[ - ][ | ][ | ]>   BATTLESHIP | Tutorial   <[ - ][ - ][ | ]>═════╗\n\n");
     board tutorialBoard = create_board();
@@ -70,7 +78,13 @@ void print_tutorial_screen() {
     delete_board(&tutorialBoard);    
 }
 
-// ask player 1 to place carrier (5), modifies p1Ships board and p1_carrier ship
+/**
+ * Displays screen for P1 placing their carrier and places it (initializes the carrier and draws it onto the board)
+ * @param p1Ships: pointer to p1Ships representing player 1's board of ships
+ * @param p1_carrier: pointer to p1_carrier representing player 1's carrier ship
+ * @return nothing
+ * @modifies p1Ships, p1_carrier
+ */
 void p1_place_carrier(board* p1Ships, ship* p1_carrier) {
     int startRow = -2, startCol = -2, endRow = -2, endCol = -2;
     bool shipPlaced = false;
@@ -88,7 +102,13 @@ void p1_place_carrier(board* p1Ships, ship* p1_carrier) {
     draw_ship(p1Ships, *p1_carrier); 
 }
 
-// ask player 1 to place battleship (4), modifies p1Ships board and p1_battleship ship
+/**
+ * Displays screen for P1 placing their battleship and places it (initializes the battleship and draws it onto the board)
+ * @param p1Ships: pointer to p1Ships representing player 1's board of ships
+ * @param p1_battleship: pointer to p1_battleship representing player 1's battleship ship
+ * @return nothing
+ * @modifies p1Ships, p1_battleship
+ */
 void p1_place_battleship(board* p1Ships, ship* p1_battleship) {
     int startRow = -2, startCol = -2, endRow = -2, endCol = -2;
     bool shipPlaced = false;
@@ -106,7 +126,13 @@ void p1_place_battleship(board* p1Ships, ship* p1_battleship) {
     draw_ship(p1Ships, *p1_battleship); 
 }
 
-// ask player 1 to place destroyer (3), modifies p1Ships board and p1_destroyer ship
+/**
+ * Displays screen for P1 placing their destroyer and places it (initializes the destroyer and draws it onto the board)
+ * @param p1Ships: pointer to p1Ships representing player 1's board of ships
+ * @param p1_destroyer: pointer to p1_destroyer representing player 1's destroyer ship
+ * @return nothing
+ * @modifies p1Ships, p1_destroyer
+ */
 void p1_place_destroyer(board* p1Ships, ship* p1_destroyer) {
     int startRow = -2, startCol = -2, endRow = -2, endCol = -2;
     bool shipPlaced = false;
@@ -124,7 +150,13 @@ void p1_place_destroyer(board* p1Ships, ship* p1_destroyer) {
     draw_ship(p1Ships, *p1_destroyer); 
 }
 
-// ask player 1 to place submarine (3), modifies p1Ships board and p1_submarine ship
+/**
+ * Displays screen for P1 placing their submarine and places it (initializes the submarine and draws it onto the board)
+ * @param p1Ships: pointer to p1Ships representing player 1's board of ships
+ * @param p1_submarine: pointer to p1_submarine representing player 1's submarine ship
+ * @return nothing
+ * @modifies p1Ships, p1_submarine
+ */
 void p1_place_submarine(board* p1Ships, ship* p1_submarine) {
     int startRow = -2, startCol = -2, endRow = -2, endCol = -2;
     bool shipPlaced = false;
@@ -142,7 +174,13 @@ void p1_place_submarine(board* p1Ships, ship* p1_submarine) {
     draw_ship(p1Ships, *p1_submarine); 
 }
 
-// ask player 1 to place patrol boat (2), modifies p1Ships board and p1_patrol_boat ship
+/**
+ * Displays screen for P1 placing their patrol boat and places it (initializes the patrol boat and draws it onto the board)
+ * @param p1Ships: pointer to p1Ships representing player 1's board of ships
+ * @param p1_patrol_boat: pointer to p1_patrol_ship representing player 1's patrol boat ship
+ * @return nothing
+ * @modifies p1Ships, p1_patrol_boat
+ */
 void p1_place_patrol_boat(board* p1Ships, ship* p1_patrol_boat) {
     int startRow = -2, startCol = -2, endRow = -2, endCol = -2;
     bool shipPlaced = false;
@@ -160,7 +198,17 @@ void p1_place_patrol_boat(board* p1Ships, ship* p1_patrol_boat) {
     draw_ship(p1Ships, *p1_patrol_boat); 
 }
 
-// ask player 1 to place all ships
+/**
+ * Places all of p1 ships (individually prompts user to place each ship, initializing and drawing them onto the board)
+ * @param p1Ships: pointer to p1Ships representing player 1's board of ships
+ * @param p1_carrier: pointer to p1_carrier representing player 1's carrier ship
+ * @param p1_battleship: pointer to p1_battleship representing player 1's battleship ship
+ * @param p1_destroyer: pointer to p1_destroyer representing player 1's destroyer ship
+ * @param p1_submarine: pointer to p1_submarine representing player 1's submarine ship
+ * @param p1_patrol_boat: pointer to p1_patrol_boat representing player 1's boat ship
+ * @return nothing
+ * @modifies p1Ships, p1_carrier, p1_battleship, p1_destroyer, p1_submarine, p1_patrol_boat
+ */
 void p1_ship_placement(board* p1Ships, ship* p1_carrier, ship* p1_battleship, ship* p1_destroyer, ship* p1_submarine, ship* p1_patrol_boat) {
     p1_place_carrier(p1Ships, p1_carrier);
     p1_place_battleship(p1Ships, p1_battleship);
@@ -169,7 +217,13 @@ void p1_ship_placement(board* p1Ships, ship* p1_carrier, ship* p1_battleship, sh
     p1_place_patrol_boat(p1Ships, p1_patrol_boat); 
 }
 
-// ask player 2 to place carrier (5), modifies p2Ships board and p2_carrier ship
+/**
+ * Displays screen for P2 placing their carrier and places it (initializes the carrier and draws it onto the board)
+ * @param p2Ships: pointer to p2Ships representing player 2's board of ships
+ * @param p2_carrier: pointer to p2_carrier representing player 2's carrier ship
+ * @return nothing
+ * @modifies p2Ships, p2_carrier
+ */
 void p2_place_carrier(board* p2Ships, ship* p2_carrier) {
     int startRow = -2, startCol = -2, endRow = -2, endCol = -2;
     bool shipPlaced = false;
@@ -187,7 +241,13 @@ void p2_place_carrier(board* p2Ships, ship* p2_carrier) {
     draw_ship(p2Ships, *p2_carrier); 
 }
 
-// ask player 2 to place battleship (4), modifies p2Ships board and p2_battleship ship
+/**
+ * Displays screen for P2 placing their battleship and places it (initializes the battleship and draws it onto the board)
+ * @param p2Ships: pointer to p2Ships representing player 2's board of ships
+ * @param p2_battleship: pointer to p2_battleship representing player 2's battleship ship
+ * @return nothing
+ * @modifies p2Ships, p2_battleship
+ */
 void p2_place_battleship(board* p2Ships, ship* p2_battleship) {
     int startRow = -2, startCol = -2, endRow = -2, endCol = -2;
     bool shipPlaced = false;
@@ -205,7 +265,13 @@ void p2_place_battleship(board* p2Ships, ship* p2_battleship) {
     draw_ship(p2Ships, *p2_battleship); 
 }
 
-// ask player 2 to place destroyer (3), modifies p2Ships board and p2_destroyer ship
+/**
+ * Displays screen for P2 placing their destroyer and places it (initializes the destroyer and draws it onto the board)
+ * @param p2Ships: pointer to p2Ships representing player 2's board of ships
+ * @param p2_destroyer: pointer to p2_destroyer representing player 2's destroyer ship
+ * @return nothing
+ * @modifies p2Ships, p2_destroyer
+ */
 void p2_place_destroyer(board* p2Ships, ship* p2_destroyer) {
     int startRow = -2, startCol = -2, endRow = -2, endCol = -2;
     bool shipPlaced = false;
@@ -223,7 +289,13 @@ void p2_place_destroyer(board* p2Ships, ship* p2_destroyer) {
     draw_ship(p2Ships, *p2_destroyer); 
 }
 
-// ask player 2 to place submarine (3), modifies p2Ships board and p2_submarine ship
+/**
+ * Displays screen for P2 placing their submarine and places it (initializes the submarine and draws it onto the board)
+ * @param p2Ships: pointer to p2Ships representing player 2's board of ships
+ * @param p2_submarine: pointer to p2_submarine representing player 2's submarine ship
+ * @return nothing
+ * @modifies p2Ships, p2_submarine
+ */
 void p2_place_submarine(board* p2Ships, ship* p2_submarine) {
     int startRow = -2, startCol = -2, endRow = -2, endCol = -2;
     bool shipPlaced = false;
@@ -241,7 +313,13 @@ void p2_place_submarine(board* p2Ships, ship* p2_submarine) {
     draw_ship(p2Ships, *p2_submarine); 
 }
 
-// ask player 2 to place patrol boat (2), modifies p2Ships board and p2_patrol_boat ship
+/**
+ * Displays screen for P2 placing their patrol boat and places it (initializes the patrol boat and draws it onto the board)
+ * @param p2Ships: pointer to p1Ships representing player 2's board of ships
+ * @param p2_patrol_boat: pointer to p2_patrol_ship representing player 2's patrol boat ship
+ * @return nothing
+ * @modifies p2Ships, p2_patrol_boat
+ */
 void p2_place_patrol_boat(board* p2Ships, ship* p2_patrol_boat) {   
     int startRow = -2, startCol = -2, endRow = -2, endCol = -2;
     bool shipPlaced = false;
@@ -259,7 +337,17 @@ void p2_place_patrol_boat(board* p2Ships, ship* p2_patrol_boat) {
     draw_ship(p2Ships, *p2_patrol_boat); 
 }
 
-// ask player 2 to place all ships
+/**
+ * Places all of p2 ships (individually prompts user to place each ship, initializing and drawing them onto the board)
+ * @param p2Ships: pointer to p2Ships representing player 2's board of ships
+ * @param p2_carrier: pointer to p2_carrier representing player 2's carrier ship
+ * @param p2_battleship: pointer to p2_battleship representing player 2's battleship ship
+ * @param p2_destroyer: pointer to p2_destroyer representing player 2's destroyer ship
+ * @param p2_submarine: pointer to p2_submarine representing player 2's submarine ship
+ * @param p2_patrol_boat: pointer to p2_patrol_boat representing player 2's boat ship
+ * @return nothing
+ * @modifies p2Ships, p2_carrier, p2_battleship, p2_destroyer, p2_submarine, p2_patrol_boat
+ */
 void p2_ship_placement(board* p2Ships, ship* p2_carrier, ship* p2_battleship, ship* p2_destroyer, ship* p2_submarine, ship* p2_patrol_boat) {
     p2_place_carrier(p2Ships, p2_carrier);
     p2_place_battleship(p2Ships, p2_battleship);
@@ -268,7 +356,16 @@ void p2_ship_placement(board* p2Ships, ship* p2_carrier, ship* p2_battleship, sh
     p2_place_patrol_boat(p2Ships, p2_patrol_boat); 
 }
 
-// displays the player's selection of ship locations and health
+/**
+ * Prints a player's board of ships and their corresponding hp
+ * @param pShips: board representing board of ships to print
+ * @param p_carrier: ship struct representing whichever player's carrier ship
+ * @param p_battleship: ship struct representing whichever player's battleship ship
+ * @param p_destroyer: ship struct representing whichever player's destroyer ship
+ * @param p_submarine: ship struct representing whichever player's submarine ship
+ * @param p_patrol_boat: ship struct representing whichever player's boat ship
+ * @return nothing
+ */
 void print_ships(board pShips, ship p_carrier, ship p_battleship, ship p_destroyer, ship p_submarine, ship p_patrol_boat) {
     printf("\n\n╔═════<[ - ][ | ][ | ]>   BATTLESHIP   <[ - ][ - ][ | ]>═════╗\n\n");
     print_board(pShips);
@@ -279,7 +376,17 @@ void print_ships(board pShips, ship p_carrier, ship p_battleship, ship p_destroy
     printf("\n\n<[ - ][ - ][ | ]>   Press [Any Letter] + [Enter] to Continue   <[ | ][ | ][ - ]>\n\n");
 }
 
-// prints hit screen and announces sinking if necessary
+/**
+ * Prints a player's updated "attackboard" (the board tracking their hits and misses on the enemy) in a screen
+ signifying a hit and the enemy ships they have sunk
+ * @param attackBoard: board representing whichever player's hits and misses
+ * @param p_carrier: ship struct representing the enemy's carrier ship
+ * @param p_battleship: ship struct representing the enemy's battleship ship
+ * @param p_destroyer: ship struct representing the enemy's destroyer ship
+ * @param p_submarine: ship struct representing the enemy's submarine ship
+ * @param p_patrol_boat: ship struct representing the enemy's boat ship
+ * @return nothing
+ */
 void print_hit_screen(board attackBoard, ship p_carrier, ship p_battleship, ship p_destroyer, ship p_submarine, ship p_patrol_boat) {
     printf("\n\n╔═════<[ - ][ | ][ | ]>   BATTLESHIP   <[ - ][ - ][ | ]>═════╗\n\n");
     print_board(attackBoard);
@@ -293,7 +400,17 @@ void print_hit_screen(board attackBoard, ship p_carrier, ship p_battleship, ship
     printf("\n\n╙─────────────────────────────────────────────────────────────╜");
 }
 
-// prints miss screen
+/**
+ * Prints a player's updated "attackboard" (the board tracking their hits and misses on the enemy) in a screen
+ signifying a miss and the enemy ships they have sunk
+ * @param attackBoard: board representing whichever player's hits and misses
+ * @param p_carrier: ship struct representing the enemy's carrier ship
+ * @param p_battleship: ship struct representing the enemy's battleship ship
+ * @param p_destroyer: ship struct representing the enemy's destroyer ship
+ * @param p_submarine: ship struct representing the enemy's submarine ship
+ * @param p_patrol_boat: ship struct representing the enemy's boat ship
+ * @return nothing
+ */
 void print_miss_screen(board attackBoard, ship p_carrier, ship p_battleship, ship p_destroyer, ship p_submarine, ship p_patrol_boat) {
     printf("\n\n╔═════<[ - ][ | ][ | ]>   BATTLESHIP   <[ - ][ - ][ | ]>═════╗\n\n");
     print_board(attackBoard);
@@ -307,6 +424,19 @@ void print_miss_screen(board attackBoard, ship p_carrier, ship p_battleship, shi
     printf("\n\n╙─────────────────────────────────────────────────────────────╜");
 }
 
+/**
+ * Implements p1's turn to attack; asks for target until input is valid, acts accordingly to either hit
+ or miss
+ * @param p1Attack: pointer to p1Attack representing board that tracks player 1's hits and misses
+ * @param p2Ships: pointer to p2Ships representing board containing the enemy's ships
+ * @param p2_carrier: pointer to p_carrier representing the enemy carrier ship
+ * @param p2_battleship: pointer to p2_battleship representing the enemy battleship ship
+ * @param p2_destroyer: pointer to p2_destroyer representing the enemy destroyer ship
+ * @param p2_submarine: pointer to p2_submarine representing the enemy submarine ship
+ * @param p2_patrol_boat: pointer to p2_patrol_boat representing the enemy patrol boat ship
+ * @return nothing
+ * @modifies p1Attack, p2Ships, p2_carrier, p2_battleship, p2_destroyer, p2_submarine, p2_patrol_boat
+ */
 void p1_shot(board* p1Attack, board* p2Ships, ship* p2_carrier, ship* p2_battleship, ship* p2_destroyer, ship* p2_submarine, ship* p2_patrol_boat) {
     int targetRow = -2, targetCol = -2;
     bool validTarget = false;
@@ -327,6 +457,19 @@ void p1_shot(board* p1Attack, board* p2Ships, ship* p2_carrier, ship* p2_battles
     printf("\n\n<[ - ][ - ][ | ]>   Player 1 Shot | Press [Any Letter] + [Enter] & PASS to Player 2  <[ | ][ | ][ - ]>");
 }
 
+/**
+ * Implements p2's turn to attack; asks for target until input is valid, acts accordingly to either hit
+ or miss
+ * @param p2Attack: pointer to p2Attack representing board that tracks player 2's hits and misses
+ * @param p1Ships: pointer to p2Ships representing board containing the enemy's ships
+ * @param p1_carrier: pointer to p_carrier representing the enemy carrier ship
+ * @param p1_battleship: pointer to p2_battleship representing the enemy battleship ship
+ * @param p1_destroyer: pointer to p2_destroyer representing the enemy destroyer ship
+ * @param p1_submarine: pointer to p2_submarine representing the enemy submarine ship
+ * @param p1_patrol_boat: pointer to p2_patrol_boat representing the enemy patrol boat ship
+ * @return nothing
+ * @modifies p2Attack, p1Ships, p1_carrier, p1_battleship, p1_destroyer, p1_submarine, p1_patrol_boat
+ */
 void p2_shot(board* p2Attack, board* p1Ships, ship* p1_carrier, ship* p1_battleship, ship* p1_destroyer, ship* p1_submarine, ship* p1_patrol_boat) {
     int targetRow = -2, targetCol = -2;
     bool validTarget = false;
@@ -347,6 +490,11 @@ void p2_shot(board* p2Attack, board* p1Ships, ship* p1_carrier, ship* p1_battles
     printf("\n\n<[ - ][ - ][ | ]>   Player 2 Shot | Press [Any Letter] + [Enter] & PASS to Player 1  <[ | ][ | ][ - ]>");
 }
 
+/**
+ * Prints win screen signifying player 1's win
+ * @param none
+ * @return nothing
+ */
 void print_p1_win_screen() {
     printf("\n\n╔═════<[ - ][ | ][ | ]>   BATTLESHIP   <[ - ][ - ][ | ]>═════╗\n\n");
     board winBoard = create_board();
@@ -381,6 +529,11 @@ void print_p1_win_screen() {
     delete_board(&winBoard);    
 }
 
+/**
+ * Prints win screen signifying player 2's win
+ * @param none
+ * @return nothing
+ */
 void print_p2_win_screen() {
     printf("\n\n╔═════<[ - ][ | ][ | ]>   BATTLESHIP   <[ - ][ - ][ | ]>═════╗\n\n");
     board winBoard = create_board();
@@ -415,7 +568,11 @@ void print_p2_win_screen() {
     delete_board(&winBoard);   
 }
 
-// checks win and responds accordingly
+/**
+ * Prints win screen signifying player 2's win
+ * @param none
+ * @return nothing
+ */
 bool check_win(ship p1_carrier, ship p1_battleship, ship p1_destroyer, ship p1_submarine, ship p1_patrol_boat, 
     ship p2_carrier, ship p2_battleship, ship p2_destroyer, ship p2_submarine, ship p2_patrol_boat) {
     if (p1_carrier.health == 0 && p1_battleship.health == 0 && p1_destroyer.health == 0 && p1_submarine.health == 0 && p1_patrol_boat.health == 0) {
@@ -429,77 +586,66 @@ bool check_win(ship p1_carrier, ship p1_battleship, ship p1_destroyer, ship p1_s
     else return false;
 }
 
+/**
+ * Initializes all variables necessary for playing the game and progression, call stages in order, do turns until win, deallocate memory after
+ * @param none
+ * @return nothing
+ */
 void play_game() {
 
-    // for user progression
+    // for progressing
     char c;
     int num_args_read = 0;
 
-    // create player 1's board of ships
+    // allow both users to place ships and display their choices
     board p1Ships = create_board();
-
-    // declare player 1's ships
     ship p1_carrier, p1_battleship, p1_destroyer, p1_submarine, p1_patrol_boat; 
-    
-    // define the ships and place them
     p1_ship_placement(&p1Ships, &p1_carrier, &p1_battleship, &p1_destroyer, &p1_submarine, &p1_patrol_boat);
-
-    // display player 1's ships
     print_ships(p1Ships, p1_carrier, p1_battleship, p1_destroyer, p1_submarine, p1_patrol_boat);
 
-    // create player 2's board of ships
     board p2Ships = create_board();
-
-    // declare player 2's ships
     ship p2_carrier, p2_battleship, p2_destroyer, p2_submarine, p2_patrol_boat; 
-
     // take continue any key
     num_args_read = scanf("%c", &c);
-    // define the ships and place them
     if (num_args_read >= 1) p2_ship_placement(&p2Ships, &p2_carrier, &p2_battleship, &p2_destroyer, &p2_submarine, &p2_patrol_boat);
-
-   // display player 2's ships
     print_ships(p2Ships, p2_carrier, p2_battleship, p2_destroyer, p2_submarine, p2_patrol_boat);
 
-    // create player 1 and player 2's attack boards (to track shots)
+
     board p1Attack = create_board();
     board p2Attack = create_board();
 
-    // take continue any key
+    // once ready, start turns
     num_args_read = scanf("%c", &c);
-    // clear input buffer 
     while (getchar() != '\n');
-
-    // do turns
     if (num_args_read >= 1) {
         
         num_args_read = 0;
 
-        // adjust shot tracking for p1 and its effect on p2's ships
+        // p1 always goes first
         p1_shot(&p1Attack, &p2Ships, &p2_carrier, &p2_battleship, &p2_destroyer, &p2_submarine, &p2_patrol_boat); 
 
         // continue while game not over
         while (1) {
-            
+            // let p2 show the damage p1 did to them
             num_args_read = scanf("%c", &c);
             while (getchar() != '\n');
             if (num_args_read >= 1) print_ships(p2Ships, p2_carrier, p2_battleship, p2_destroyer, p2_submarine, p2_patrol_boat);
             num_args_read = 0;
             if (check_win(p1_carrier, p1_battleship, p1_destroyer, p1_submarine, p1_patrol_boat, 
                 p2_carrier, p2_battleship, p2_destroyer, p2_submarine, p2_patrol_boat)) break; 
-            
+            // p2 turn to attack
             num_args_read = scanf("%c", &c);
             while (getchar() != '\n');
             if (num_args_read >= 1) p2_shot(&p2Attack, &p1Ships, &p1_carrier, &p1_battleship, &p1_destroyer, &p1_submarine, &p1_patrol_boat); 
             num_args_read = 0;
-
+            // let p1 see the damage p2 did to them
             num_args_read = scanf("%c", &c);
             while (getchar() != '\n');
             if (num_args_read >= 1) print_ships(p1Ships, p1_carrier, p1_battleship, p1_destroyer, p1_submarine, p1_patrol_boat);   
             num_args_read = 0;
             if (check_win(p1_carrier, p1_battleship, p1_destroyer, p1_submarine, p1_patrol_boat, 
                 p2_carrier, p2_battleship, p2_destroyer, p2_submarine, p2_patrol_boat)) break; 
-
+            // p1 turn to attack
             num_args_read = scanf("%c", &c);
             while (getchar() != '\n');
             if (num_args_read >= 1) p1_shot(&p1Attack, &p2Ships, &p2_carrier, &p2_battleship, &p2_destroyer, &p2_submarine, &p2_patrol_boat); 
@@ -508,7 +654,6 @@ void play_game() {
         }
     }
 
-    // free all the boards
     delete_board(&p1Ships);
     delete_board(&p2Ships);
     delete_board(&p1Attack);
