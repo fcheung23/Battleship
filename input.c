@@ -169,10 +169,10 @@ bool is_valid_ship(int length, board pShips, int startRow, int startCol, int end
 
 /**
  * Asks user and gets input for hull coordinates to create ships until input is valid
- * @param startRow: int pointer to startRow representing row of the start hull
- * @param startCol: int pointer to startCol representing column of the start hull
- * @param endRow: int pointer to endRow representing row of the end hull
- * @param endCol: int pointer to endCol representing column of the end hull
+ * @param startRow: int pointer to the int representing row of the start hull
+ * @param startCol: int pointer to the int representing column of the start hull
+ * @param endRow: int pointer to the int representing row of the end hull
+ * @param endCol: int pointer to the int representing column of the end hull
  * @modifies value of startRow, startCol, endRow, endCol
  * @return nothing
  */
@@ -194,8 +194,8 @@ void get_valid_hull(int* startRow, int* startCol, int* endRow, int* endCol) {
 
 /**
  * Asks user and gets input for a target to attack until input is valid
- * @param targetRow: int pointer to targetRow representing row of the target
- * @param targetCol: int pointer to targetCol representing column of the target
+ * @param targetRow: int pointer to the int representing row of the target
+ * @param targetCol: int pointer to the int representing column of the target
  * @modifies value of targetRow, targetCol
  * @return nothing
  */
@@ -225,12 +225,12 @@ bool is_valid_target(board attackBoard, int targetRow, int targetCol) {
  * Checks if coordinates of target entered are a hit (land on one of the enemy ships) and 
  marks the attackboard (hit/miss tracker board) with a 'X' if hit and '?' for a miss
  * @param attackBoard: pointer to attackBoard representing board of ships the player attacks
- * @param pShips: pointer to pShips representing board containing the user's current ships
- * @param p_carrier: pointer to p_carrier representing the enemy carrier ship
- * @param p_battleship: pointer to p_battleship representing the enemy battleship ship
- * @param p_destroyer: pointer to p_destroyer representing the enemy destroyer ship
- * @param p_submarine: pointer to p_submarine representing the enemy submarine ship
- * @param p_patrol_boat: pointer to p_patrol_boat representing the enemy patrol boat ship
+ * @param pShips: pointer to the board struct representing board containing the user's current ships
+ * @param p_carrier: pointer to the ship struct representing the enemy carrier ship
+ * @param p_battleship: pointer to the ship struct representing the enemy battleship ship
+ * @param p_destroyer: pointer to the ship struct representing the enemy destroyer ship
+ * @param p_submarine: pointer to the ship struct representing the enemy submarine ship
+ * @param p_patrol_boat: pointer to the ship struct representing the enemy patrol boat ship
  * @param targetRow: int representing row of the target
  * @param targetCol: int representing the column of the target
  * @return bool representing if target coordinates make a hit; true if so and false if not
