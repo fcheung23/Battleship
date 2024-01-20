@@ -222,7 +222,8 @@ bool is_valid_target(board attackBoard, int targetRow, int targetCol) {
 }
 
 /**
- * Checks if coordinates of target entered are a hit (land on one of the enemy ships)
+ * Checks if coordinates of target entered are a hit (land on one of the enemy ships) and 
+ marks the attackboard (hit/miss tracker board) with a 'X' if hit and '?' for a miss
  * @param attackBoard: pointer to attackBoard representing board of ships the player attacks
  * @param pShips: pointer to pShips representing board containing the user's current ships
  * @param p_carrier: pointer to p_carrier representing the enemy carrier ship
