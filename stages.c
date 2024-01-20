@@ -80,8 +80,8 @@ void print_tutorial_screen() {
 
 /**
  * Displays screen for P1 placing their carrier and places it (initializes the carrier and draws it onto the board)
- * @param p1Ships: pointer to p1Ships representing player 1's board of ships
- * @param p1_carrier: pointer to p1_carrier representing player 1's carrier ship
+ * @param p1Ships: pointer to the board struct representing player 1's board of ships
+ * @param p1_carrier: pointer to the ship struct representing player 1's carrier ship
  * @return nothing
  * @modifies p1Ships, p1_carrier
  */
@@ -104,8 +104,8 @@ void p1_place_carrier(board* p1Ships, ship* p1_carrier) {
 
 /**
  * Displays screen for P1 placing their battleship and places it (initializes the battleship and draws it onto the board)
- * @param p1Ships: pointer to p1Ships representing player 1's board of ships
- * @param p1_battleship: pointer to p1_battleship representing player 1's battleship ship
+ * @param p1Ships: pointer to the board struct representing player 1's board of ships
+ * @param p1_battleship: pointer to the ship struct representing player 1's battleship ship
  * @return nothing
  * @modifies p1Ships, p1_battleship
  */
@@ -128,8 +128,8 @@ void p1_place_battleship(board* p1Ships, ship* p1_battleship) {
 
 /**
  * Displays screen for P1 placing their destroyer and places it (initializes the destroyer and draws it onto the board)
- * @param p1Ships: pointer to p1Ships representing player 1's board of ships
- * @param p1_destroyer: pointer to p1_destroyer representing player 1's destroyer ship
+ * @param p1Ships: pointer to the board struct representing player 1's board of ships
+ * @param p1_destroyer: pointer to the ship struct representing player 1's destroyer ship
  * @return nothing
  * @modifies p1Ships, p1_destroyer
  */
@@ -152,8 +152,8 @@ void p1_place_destroyer(board* p1Ships, ship* p1_destroyer) {
 
 /**
  * Displays screen for P1 placing their submarine and places it (initializes the submarine and draws it onto the board)
- * @param p1Ships: pointer to p1Ships representing player 1's board of ships
- * @param p1_submarine: pointer to p1_submarine representing player 1's submarine ship
+ * @param p1Ships: pointer to the board struct representing player 1's board of ships
+ * @param p1_submarine: pointer to the ship struct representing player 1's submarine ship
  * @return nothing
  * @modifies p1Ships, p1_submarine
  */
@@ -176,8 +176,8 @@ void p1_place_submarine(board* p1Ships, ship* p1_submarine) {
 
 /**
  * Displays screen for P1 placing their patrol boat and places it (initializes the patrol boat and draws it onto the board)
- * @param p1Ships: pointer to p1Ships representing player 1's board of ships
- * @param p1_patrol_boat: pointer to p1_patrol_ship representing player 1's patrol boat ship
+ * @param p1Ships: pointer to the board struct representing player 1's board of ships
+ * @param p1_patrol_boat: pointer to the ship struct representing player 1's patrol boat ship
  * @return nothing
  * @modifies p1Ships, p1_patrol_boat
  */
@@ -200,12 +200,12 @@ void p1_place_patrol_boat(board* p1Ships, ship* p1_patrol_boat) {
 
 /**
  * Places all of p1 ships (individually prompts user to place each ship, initializing and drawing them onto the board)
- * @param p1Ships: pointer to p1Ships representing player 1's board of ships
- * @param p1_carrier: pointer to p1_carrier representing player 1's carrier ship
- * @param p1_battleship: pointer to p1_battleship representing player 1's battleship ship
- * @param p1_destroyer: pointer to p1_destroyer representing player 1's destroyer ship
- * @param p1_submarine: pointer to p1_submarine representing player 1's submarine ship
- * @param p1_patrol_boat: pointer to p1_patrol_boat representing player 1's boat ship
+ * @param p1Ships: pointer to the board struct representing player 1's board of ships
+ * @param p1_carrier: pointer to the ship struct representing player 1's carrier ship
+ * @param p1_battleship: pointer to the ship struct representing player 1's battleship ship
+ * @param p1_destroyer: pointer to the ship struct representing player 1's destroyer ship
+ * @param p1_submarine: pointer to the ship struct representing player 1's submarine ship
+ * @param p1_patrol_boat: pointer to the ship struct representing player 1's boat ship
  * @return nothing
  * @modifies p1Ships, p1_carrier, p1_battleship, p1_destroyer, p1_submarine, p1_patrol_boat
  */
@@ -219,8 +219,8 @@ void p1_ship_placement(board* p1Ships, ship* p1_carrier, ship* p1_battleship, sh
 
 /**
  * Displays screen for P2 placing their carrier and places it (initializes the carrier and draws it onto the board)
- * @param p2Ships: pointer to p2Ships representing player 2's board of ships
- * @param p2_carrier: pointer to p2_carrier representing player 2's carrier ship
+ * @param p2Ships: pointer to the board struct representing player 2's board of ships
+ * @param p2_carrier: pointer to the ship struct representing player 2's carrier ship
  * @return nothing
  * @modifies p2Ships, p2_carrier
  */
@@ -243,8 +243,8 @@ void p2_place_carrier(board* p2Ships, ship* p2_carrier) {
 
 /**
  * Displays screen for P2 placing their battleship and places it (initializes the battleship and draws it onto the board)
- * @param p2Ships: pointer to p2Ships representing player 2's board of ships
- * @param p2_battleship: pointer to p2_battleship representing player 2's battleship ship
+ * @param p2Ships: pointer to the board struct representing player 2's board of ships
+ * @param p2_battleship: pointer to the ship struct representing player 2's battleship ship
  * @return nothing
  * @modifies p2Ships, p2_battleship
  */
@@ -267,8 +267,8 @@ void p2_place_battleship(board* p2Ships, ship* p2_battleship) {
 
 /**
  * Displays screen for P2 placing their destroyer and places it (initializes the destroyer and draws it onto the board)
- * @param p2Ships: pointer to p2Ships representing player 2's board of ships
- * @param p2_destroyer: pointer to p2_destroyer representing player 2's destroyer ship
+ * @param p2Ships: pointer to the board struct representing player 2's board of ships
+ * @param p2_destroyer: pointer to the ship struct representing player 2's destroyer ship
  * @return nothing
  * @modifies p2Ships, p2_destroyer
  */
@@ -291,8 +291,8 @@ void p2_place_destroyer(board* p2Ships, ship* p2_destroyer) {
 
 /**
  * Displays screen for P2 placing their submarine and places it (initializes the submarine and draws it onto the board)
- * @param p2Ships: pointer to p2Ships representing player 2's board of ships
- * @param p2_submarine: pointer to p2_submarine representing player 2's submarine ship
+ * @param p2Ships: pointer to the board struct representing player 2's board of ships
+ * @param p2_submarine: pointer to the ship struct representing player 2's submarine ship
  * @return nothing
  * @modifies p2Ships, p2_submarine
  */
@@ -315,8 +315,8 @@ void p2_place_submarine(board* p2Ships, ship* p2_submarine) {
 
 /**
  * Displays screen for P2 placing their patrol boat and places it (initializes the patrol boat and draws it onto the board)
- * @param p2Ships: pointer to p1Ships representing player 2's board of ships
- * @param p2_patrol_boat: pointer to p2_patrol_ship representing player 2's patrol boat ship
+ * @param p2Ships: pointer to the board struct representing player 2's board of ships
+ * @param p2_patrol_boat: pointer to the ship struct representing player 2's patrol boat ship
  * @return nothing
  * @modifies p2Ships, p2_patrol_boat
  */
@@ -339,12 +339,12 @@ void p2_place_patrol_boat(board* p2Ships, ship* p2_patrol_boat) {
 
 /**
  * Places all of p2 ships (individually prompts user to place each ship, initializing and drawing them onto the board)
- * @param p2Ships: pointer to p2Ships representing player 2's board of ships
- * @param p2_carrier: pointer to p2_carrier representing player 2's carrier ship
- * @param p2_battleship: pointer to p2_battleship representing player 2's battleship ship
- * @param p2_destroyer: pointer to p2_destroyer representing player 2's destroyer ship
- * @param p2_submarine: pointer to p2_submarine representing player 2's submarine ship
- * @param p2_patrol_boat: pointer to p2_patrol_boat representing player 2's boat ship
+ * @param p2Ships: pointer to the board struct representing player 2's board of ships
+ * @param p2_carrier: pointer to the ship struct representing player 2's carrier ship
+ * @param p2_battleship: pointer to the ship struct representing player 2's battleship ship
+ * @param p2_destroyer: pointer to the ship struct representing player 2's destroyer ship
+ * @param p2_submarine: pointer to the ship struct representing player 2's submarine ship
+ * @param p2_patrol_boat: pointer to the ship struct representing player 2's boat ship
  * @return nothing
  * @modifies p2Ships, p2_carrier, p2_battleship, p2_destroyer, p2_submarine, p2_patrol_boat
  */
@@ -427,13 +427,13 @@ void print_miss_screen(board attackBoard, ship p_carrier, ship p_battleship, shi
 /**
  * Implements p1's turn to attack; asks for target until input is valid, acts accordingly to either hit
  or miss
- * @param p1Attack: pointer to p1Attack representing board that tracks player 1's hits and misses
- * @param p2Ships: pointer to p2Ships representing board containing the enemy's ships
- * @param p2_carrier: pointer to p_carrier representing the enemy carrier ship
- * @param p2_battleship: pointer to p2_battleship representing the enemy battleship ship
- * @param p2_destroyer: pointer to p2_destroyer representing the enemy destroyer ship
- * @param p2_submarine: pointer to p2_submarine representing the enemy submarine ship
- * @param p2_patrol_boat: pointer to p2_patrol_boat representing the enemy patrol boat ship
+ * @param p1Attack: pointer to the board struct representing board that tracks player 1's hits and misses
+ * @param p2Ships: pointer to the board struct representing board containing the enemy's ships
+ * @param p2_carrier: pointer to the ship struct representing the enemy carrier ship
+ * @param p2_battleship: pointer to the ship struct representing the enemy battleship ship
+ * @param p2_destroyer: pointer to the ship struct representing the enemy destroyer ship
+ * @param p2_submarine: pointer to the ship struct representing the enemy submarine ship
+ * @param p2_patrol_boat: pointer to the ship struct representing the enemy patrol boat ship
  * @return nothing
  * @modifies p1Attack, p2Ships, p2_carrier, p2_battleship, p2_destroyer, p2_submarine, p2_patrol_boat
  */
@@ -460,13 +460,13 @@ void p1_shot(board* p1Attack, board* p2Ships, ship* p2_carrier, ship* p2_battles
 /**
  * Implements p2's turn to attack; asks for target until input is valid, acts accordingly to either hit
  or miss
- * @param p2Attack: pointer to p2Attack representing board that tracks player 2's hits and misses
- * @param p1Ships: pointer to p2Ships representing board containing the enemy's ships
- * @param p1_carrier: pointer to p_carrier representing the enemy carrier ship
- * @param p1_battleship: pointer to p2_battleship representing the enemy battleship ship
- * @param p1_destroyer: pointer to p2_destroyer representing the enemy destroyer ship
- * @param p1_submarine: pointer to p2_submarine representing the enemy submarine ship
- * @param p1_patrol_boat: pointer to p2_patrol_boat representing the enemy patrol boat ship
+ * @param p2Attack: pointer to the board struct representing board that tracks player 2's hits and misses
+ * @param p1Ships: pointer to the board struct representing board containing the enemy's ships
+ * @param p1_carrier: pointer to the ship struct representing the enemy carrier ship
+ * @param p1_battleship: pointer to the ship struct representing the enemy battleship ship
+ * @param p1_destroyer: pointer to the ship struct representing the enemy destroyer ship
+ * @param p1_submarine: pointer to the ship struct representing the enemy submarine ship
+ * @param p1_patrol_boat: pointer to the ship struct representing the enemy patrol boat ship
  * @return nothing
  * @modifies p2Attack, p1Ships, p1_carrier, p1_battleship, p1_destroyer, p1_submarine, p1_patrol_boat
  */
@@ -569,9 +569,18 @@ void print_p2_win_screen() {
 }
 
 /**
- * Prints win screen signifying player 2's win
- * @param none
- * @return nothing
+ * Checks if the game has been won (if someone has sunk all of the opposing player's ships)
+ * @param p1_carrier: ship struct representing player 1's carrier ship
+ * @param p1_battleship: ship struct representing player 1's battleship ship
+ * @param p1_destroyer: ship struct representing player 1's destroyer ship
+ * @param p1_submarine: ship struct representing player 1's submarine ship
+ * @param p1_patrol_boat: ship struct representing player 1's boat ship
+ * @param p2_carrier: ship struct representing player 2's carrier ship
+ * @param p2_battleship: ship struct representing player 2's battleship ship
+ * @param p2_destroyer: ship struct representing player 2's destroyer ship
+ * @param p2_submarine: ship struct representing player 2's submarine ship
+ * @param p2_patrol_boat: ship struct representing player 2's boat ship
+ * @return bool representing if game has been won; true if so and false if not
  */
 bool check_win(ship p1_carrier, ship p1_battleship, ship p1_destroyer, ship p1_submarine, ship p1_patrol_boat, 
     ship p2_carrier, ship p2_battleship, ship p2_destroyer, ship p2_submarine, ship p2_patrol_boat) {
